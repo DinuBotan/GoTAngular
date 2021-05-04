@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+// This is our root component where we later nest other components.
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
