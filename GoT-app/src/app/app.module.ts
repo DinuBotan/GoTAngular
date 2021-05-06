@@ -5,13 +5,16 @@ import { AppComponent } from './app.component';
 import {HeaderComponent} from './header/header.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { BookItemComponent } from './book-list/book-item/book-item.component';
-import { BookDetailsComponent } from './book-list/book-item/book-details/book-details.component';
 import { CharacterListComponent } from './character-list/character-list.component';
 import { CharacterItemComponent } from './character-list/character-item/character-item.component';
 import { CharacterDetailsComponent } from './character-list/character-item/character-details/character-details.component';
 import { HouseListComponent } from './house-list/house-list.component';
 import { HouseItemComponent } from './house-list/house-item/house-item.component';
 import { HouseDetailsComponent } from './house-list/house-item/house-details/house-details.component';
+import { BookDetailsComponent } from './book-list/book-details/book-details.component';
+import {BookService} from './book-list/book.service';
+import {FormsModule} from '@angular/forms';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -19,18 +22,20 @@ import { HouseDetailsComponent } from './house-list/house-item/house-details/hou
     HeaderComponent,
     BookListComponent,
     BookItemComponent,
-    BookDetailsComponent,
     CharacterListComponent,
     CharacterItemComponent,
     CharacterDetailsComponent,
     HouseListComponent,
     HouseItemComponent,
-    HouseDetailsComponent
+    HouseDetailsComponent,
+    BookDetailsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [BookService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

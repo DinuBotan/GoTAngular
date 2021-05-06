@@ -1,1 +1,39 @@
-<p>book-list works!</p>
+<div class="row">
+  <div class="col-xs-10">
+    <div class="row">
+    <div *ngFor="let bookEl of books; let even = even; let i = index" >
+      <div class="col-sm-6">
+        <div class="card">
+          <span *ngIf="even">
+          <div class="card-body">
+            <app-book-item
+            [book]="bookEl"
+            [index]="i"></app-book-item>
+          </div>
+          </span>
+        </div>
+      </div>
+
+
+
+      <div class="col-sm-6" >
+        <div class="card">
+          <span *ngIf="!even">
+          <div class="card-body">
+           <app-book-item
+           [book]="bookEl"
+           [index]="i"></app-book-item>
+          </div>
+          </span>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <p>The list</p>
+  </div>
+</div>
+</div>
+
+<div>
+  <router-outlet></router-outlet>
+</div>

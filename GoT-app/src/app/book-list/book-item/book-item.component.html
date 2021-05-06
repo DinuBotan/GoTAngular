@@ -1,1 +1,11 @@
-<p>book-item works!</p>
+<a
+  style="cursor: pointer;"
+  [routerLink]="[index]"
+  class="list-group-item clearfix">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">{{book.name}}</h4>
+    <p class="list-group-item-text">{{book.url}}</p>
+    <p class="list-group-item-text">{{book.isbn}}</p>
+    <p class="list-group-item-text">{{book.authors}}</p>
+  </div>
+</a>

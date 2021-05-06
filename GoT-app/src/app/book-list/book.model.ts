@@ -1,0 +1,20 @@
+export class Book {
+  public name: string;
+  public url: string;
+  public isbn: string;
+  public authors: string[];
+  // public numberOfPages: number;
+  // public publisher: string;
+  // public country: string;
+  // public mediaType: string;
+  // public released: string;
+  // public characters: string[];
+  // public povCharacters: string[];
+
+  constructor(name: string, url: string, isbn: string, authors: string[]){
+    this.name = name;
+    this.url = url;
+    this.isbn = isbn;
+    this.authors = authors;
+  }
+}
