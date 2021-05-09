@@ -1,1 +1,14 @@
-<app-character-details></app-character-details>
+<a
+  style="cursor: pointer;"
+  [routerLink]="[index] + '/details'"
+  routerLinkActive="active"
+  class="list-group-item clearfix">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading" id="bookHeader">Aliases: {{character.aliases}}</h4>
+    <p class="list-group-item-text">Name: {{character.name}}</p>
+    <p class="list-group-item-text">Culture: {{character.culture}}</p>
+    <p class="list-group-item-text">Born: {{character.born}}</p>
+    <p class="list-group-item-text">Died: {{character.died}}</p>
+  </div>
+</a>
+

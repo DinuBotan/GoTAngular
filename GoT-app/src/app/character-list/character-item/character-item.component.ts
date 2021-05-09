@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {Character} from '../character.model';
 
 @Component({
   selector: 'app-character-item',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./character-item.component.css']
 })
 export class CharacterItemComponent implements OnInit {
+  @Input() character: Character;
+  @Input() index: number;
 
   constructor() { }
 

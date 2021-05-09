@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {BookService} from '../book.service';
-import {ActivatedRoute, Params} from '@angular/router';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Book} from '../book.model';
 
 @Component({
@@ -14,13 +14,14 @@ export class BookDetailsComponent implements OnInit {
   id: number;
 
   constructor(private bookService: BookService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private router: Router) {
   }
 
-  // tslint:disable-next-line:typedef
   ngOnInit() {
     this.route.params.subscribe(
       (params: Params) => {
+        // The + casts it to a number
         this.id = +params['id'];
         this.book = this.bookService.getBook(this.id);
       }
