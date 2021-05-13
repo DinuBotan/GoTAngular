@@ -11,12 +11,9 @@ export class HeaderComponent implements OnInit{
   constructor(private dataStorageService: DataStorageService, private bookService: BookService) {}
   ngOnInit() {
       this.dataStorageService.fetchCharacters();
+      this.dataStorageService.fetchBooks();
   }
 
-  onFetchData() {
-    this.bookService.getAllBooks();
-    console.log('Fetched data');
-  }
 
 
 }

@@ -21,6 +21,7 @@ export class CharacterListComponent implements OnInit {
       .subscribe(
         (characters: Character[]) => {
           this.characters = characters;
+          console.log('Characters arrived in the list: ', this.characters);
         }
       );
     this.characters = this.characterService.getCharacters();

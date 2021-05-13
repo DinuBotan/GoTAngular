@@ -12,7 +12,7 @@ export class BookItemComponent implements OnInit {
   @Input() book: Book;
   @Input() index: number;
 
-  constructor(private bookService: BookService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

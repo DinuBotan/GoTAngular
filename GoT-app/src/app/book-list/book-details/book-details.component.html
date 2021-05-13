@@ -1,14 +1,55 @@
 <div class="row">
   <div class="col-xs-12">
-   <h1>{{book.name}}</h1>
-<!--    <h1>Book name</h1>-->
+    <h1>Details about the selected book: </h1>
   </div>
 </div>
 
 <div class="row">
   <div class="col-xs-12">
-    <h1>{{book.url}}</h1>
-<!--    <h1>Book</h1>-->
+   <p>Name: {{book.name}}</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <p>Authors: {{book.authors}}</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <p>Authors: {{book.authors}}</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <p>Number of pages: {{book.numberOfPages}}</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <p>Publisher: {{book.publisher}}</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <p>Country: {{book.country}}</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <p>Released: {{book.released}}</p>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-xs-12">
+    <p>Characters: {{book.characters}}</p>
   </div>
 </div>
 
@@ -16,11 +57,11 @@
   <div class="col-class-12">
     <div class="btn-group">
       <button
-      type="button"
-      class="btn btn-primary dropdown-toggle">
-      Back
+        type="button"
+        class="btn btn-primary dropdown-toggle"
+        [routerLink]="'/book-list'">
+        Back
       </button>
     </div>
   </div>
 </div>
-
