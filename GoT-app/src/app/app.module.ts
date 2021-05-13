@@ -17,6 +17,7 @@ import {FormsModule} from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 import { HttpClientModule} from '@angular/common/http';
 import {CharacterService} from './character-list/character.service';
+import {HouseService} from './house-list/house.service';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,7 @@ import {CharacterService} from './character-list/character.service';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [BookService, CharacterService],
+  providers: [BookService, CharacterService, HouseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

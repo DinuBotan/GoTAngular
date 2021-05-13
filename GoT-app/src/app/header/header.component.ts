@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit{
   ngOnInit() {
       this.dataStorageService.fetchCharacters();
       this.dataStorageService.fetchBooks();
+      this.dataStorageService.fetchHouses();
   }
 
 

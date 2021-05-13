@@ -5,10 +5,12 @@ import {Book} from '../book-list/book.model';
 import {Character} from '../character-list/character.model';
 import {map} from 'rxjs/operators';
 import {CharacterService} from '../character-list/character.service';
+import {House} from '../house-list/house.model';
+import {HouseService} from '../house-list/house.service';
 
 @Injectable({providedIn: 'root'})
 export class DataStorageService {
-  constructor(private http: HttpClient, private bookService: BookService, private characterService: CharacterService) {
+  constructor(private http: HttpClient, private bookService: BookService, private characterService: CharacterService, private houseService: HouseService) {
   }
   private baseUrl = 'https://www.anapioficeandfire.com/api/';
 
@@ -21,21 +23,19 @@ export class DataStorageService {
    });
   }
 
-
-  // getAllBooks(): any {
-  //   let response = this.http.get<Book[]>(this.baseUrl + 'books');
-  //   console.log('Response: ', response);
-  //   // for(let bk in response) {
-  //   //   this.booksGot.push(new Book(bk.))
-  //   // }
-  //   return response;
-  // }
-
   fetchCharacters() {
     console.log('Fetching characters!');
     this.http.get<Character[]>(this.baseUrl + 'characters?' + 'page=1&pageSize=50').subscribe(characters => {
       console.log('Fetched characters: ', characters);
       this.characterService.setCharacters(characters);
+    });
+  }
+
+  fetchHouses() {
+    console.log('Fetching houses!');
+    this.http.get<House[]>(this.baseUrl + 'houses?' + 'page=1&pageSize=50').subscribe(houses => {
+      console.log('Fetched houses: ', houses);
+      this.houseService.setHouses(houses);
     });
   }
 

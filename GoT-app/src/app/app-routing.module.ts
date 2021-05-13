@@ -5,6 +5,7 @@ import {CharacterListComponent} from './character-list/character-list.component'
 import {HouseListComponent} from './house-list/house-list.component';
 import {BookDetailsComponent} from './book-list/book-details/book-details.component';
 import {CharacterDetailsComponent} from './character-list/character-item/character-details/character-details.component';
+import {HouseDetailsComponent} from './house-list/house-item/house-details/house-details.component';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/book-list', pathMatch: 'full'},
@@ -18,8 +19,9 @@ const appRoutes: Routes = [
       // { path: ':id/details', component: CharacterDetailsComponent}
     // ]
   },
-  { path: 'character-list/:id/details', component: CharacterDetailsComponent}
-  // { path: 'house-list', component: HouseListComponent },
+  { path: 'character-list/:id/details', component: CharacterDetailsComponent},
+  { path: 'house-list', component: HouseListComponent },
+  {path: 'house-list/:id/details', component: HouseDetailsComponent}
 ];
 
 @NgModule({

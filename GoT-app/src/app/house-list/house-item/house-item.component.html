@@ -1,1 +1,13 @@
-<app-house-details></app-house-details>
+<a
+  style="cursor: pointer;"
+  [routerLink]="[index] + '/details'"
+  routerLinkActive="active"
+  class="list-group-item clearfix">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading" id="houseHeader">Name: {{house.name}}</h4>
+    <p class="list-group-item-text">Region: {{house.region}}</p>
+    <p class="list-group-item-text">Words: {{house.words}}</p>
+    <p class="list-group-item-text">Founded: {{house.founded}}</p>
+    <p class="list-group-item-text">Died out: {{house.diedOut}}</p>
+  </div>
+</a>
