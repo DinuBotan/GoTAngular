@@ -13,6 +13,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class HouseListComponent implements OnInit {
   houses: House[];
   subscription: Subscription;
+  public searchInput: string;
 
   constructor(private houseService: HouseService, private router: Router, private route: ActivatedRoute) { }
 

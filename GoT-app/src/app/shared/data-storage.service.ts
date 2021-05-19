@@ -3,7 +3,6 @@ import {HttpClient} from '@angular/common/http';
 import {BookService} from '../book-list/book.service';
 import {Book} from '../book-list/book.model';
 import {Character} from '../character-list/character.model';
-import {map} from 'rxjs/operators';
 import {CharacterService} from '../character-list/character.service';
 import {House} from '../house-list/house.model';
 import {HouseService} from '../house-list/house.service';
@@ -39,4 +38,11 @@ export class DataStorageService {
     });
   }
 
+  // fetchCharacter(int: id) {
+  //   console.log('Fetching character ', id);
+  //   this.http.get<Character[]>(this.baseUrl + 'characters/' + id).subscribe(character => {
+  //     console.log('Fetched character: ', character);
+  //     this.characterService.setCharacters(character);
+  //   });
+  // }
 }

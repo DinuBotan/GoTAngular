@@ -1,7 +1,13 @@
 <div class="row">
+  <section>
+    <h5> Search for a house</h5>
+    <input name="searchInput" [(ngModel)]="searchInput" type="text" placeholder="Search for houses" size="50">
+    <br>
+    <br>
+  </section>
   <div class="col-xs-10">
     <div class="row">
-      <div *ngFor="let houseEl of houses; let even = even; let i = index" >
+      <div *ngFor="let houseEl of houses | search : searchInput : 'name'; let even = even; let i = index" >
         <div class="col-sm-6">
           <div class="card">
           <span *ngIf="even">
@@ -14,8 +20,6 @@
           </span>
           </div>
         </div>
-
-
 
         <div class="col-sm-6" >
           <div class="card">

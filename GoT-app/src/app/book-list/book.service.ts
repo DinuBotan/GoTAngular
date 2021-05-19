@@ -1,12 +1,13 @@
 import {Book} from './book.model';
-import {EventEmitter, Injectable} from '@angular/core';
+import {EventEmitter, Injectable, Pipe, PipeTransform} from '@angular/core';
 import {Subject} from 'rxjs';
-import {DataStorageService} from '../shared/data-storage.service';
-import {HttpClient} from '@angular/common/http';
-import {Character} from '../character-list/character.model';
+
+@Pipe({
+  name: 'search'
+})
 
 @Injectable()
-export class BookService {
+export class BookService implements PipeTransform{
   booksChanged = new Subject<Book[]>();
 
   public books: Book[] = [
@@ -29,6 +30,26 @@ export class BookService {
 
   getBook(index: number) {
     return this.books[index];
+  }
+
+  transform(books: any[], searchInput: string, fieldName: string): any[] {
+    if (!books){
+      return [];
+    }
+
+    if (!searchInput) {
+      return books;
+    }
+
+    searchInput = searchInput.toLowerCase();
+    return books.filter(
+      item => {
+        if (item && item[fieldName]) {
+          return item[fieldName].toLowerCase().includes(searchInput);
+        }
+        return false;
+      }
+    );
   }
 
 

@@ -2,7 +2,8 @@
   style="cursor: pointer;"
   [routerLink]="[index] + '/details'"
   routerLinkActive="active"
-  class="list-group-item clearfix">
+  class="list-group-item clearfix"
+  (click)="setCharacters(book.characters)">
   <div class="pull-left">
     <h4 class="list-group-item-heading">{{book.name}}</h4>
     <p class="list-group-item-text">{{book.url}}</p>

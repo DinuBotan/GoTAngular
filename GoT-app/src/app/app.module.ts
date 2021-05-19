@@ -31,7 +31,8 @@ import {HouseService} from './house-list/house.service';
     HouseListComponent,
     HouseItemComponent,
     HouseDetailsComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    CharacterService
   ],
   imports: [
     BrowserModule,

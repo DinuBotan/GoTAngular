@@ -1,9 +1,14 @@
-import {Injectable} from '@angular/core';
+import {Injectable, Pipe, PipeTransform} from '@angular/core';
 import {Subject} from 'rxjs';
 import {House} from './house.model';
 
+@Pipe({
+  name: 'search'
+})
+
+
 @Injectable()
-export class HouseService {
+export class HouseService implements PipeTransform{
   housesChanged = new Subject<House[]>();
 
   private houses: House[] = [];
@@ -22,5 +27,25 @@ export class HouseService {
 
   getHouse(index: number) {
     return this.houses[index];
+  }
+
+  transform(houses: any[], searchInput: string, fieldName: string): any[] {
+    if (!houses){
+      return [];
+    }
+
+    if (!searchInput) {
+      return houses;
+    }
+
+    searchInput = searchInput.toLowerCase();
+    return houses.filter(
+      item => {
+        if (item && item[fieldName]) {
+          return item[fieldName].toLowerCase().includes(searchInput);
+        }
+        return false;
+      }
+    );
   }
 }

@@ -13,6 +13,7 @@ export class CharacterListComponent implements OnInit {
   characters: Character[];
   subscription: Subscription;
   showDetails = false;
+  public searchInput: string;
 
   constructor(private characterService: CharacterService, private router: Router, private route: ActivatedRoute) { }
 

@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Book} from '../book.model';
 import {BookService} from '../book.service';
+import {Character} from '../../character-list/character.model';
 
 
 @Component({
@@ -11,10 +12,15 @@ import {BookService} from '../book.service';
 export class BookItemComponent implements OnInit {
   @Input() book: Book;
   @Input() index: number;
+  characters: string[];
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  setCharacters(characters: string[]) {
+    this.characters = characters;
   }
 
 }

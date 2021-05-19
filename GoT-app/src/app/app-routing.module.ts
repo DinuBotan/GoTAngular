@@ -11,14 +11,7 @@ const appRoutes: Routes = [
   {path: '', redirectTo: '/book-list', pathMatch: 'full'},
   { path: 'book-list', component: BookListComponent},
   {path: 'book-list/:id/details', component: BookDetailsComponent},
-
-  { path: 'character-list', component: CharacterListComponent
-    //, children:
-      //[
-      // { path: ':id', component: CharacterDetailsComponent},
-      // { path: ':id/details', component: CharacterDetailsComponent}
-    // ]
-  },
+  { path: 'character-list', component: CharacterListComponent},
   { path: 'character-list/:id/details', component: CharacterDetailsComponent},
   { path: 'house-list', component: HouseListComponent },
   {path: 'house-list/:id/details', component: HouseDetailsComponent}

@@ -16,6 +16,7 @@ export class BookListComponent implements OnInit {
   selectedBook: Book;
   books: Book[];
   subscription: Subscription;
+  public searchInput: string;
 
   // I need to inject the book service created earlier in thsi component through its constructor
   constructor(private bookService: BookService, private router: Router, private route: ActivatedRoute) { }
@@ -31,7 +32,4 @@ export class BookListComponent implements OnInit {
     this.books = this.bookService.getBooks();
     }
 
-  onShowBookDetails(i: number){
-    this.router.navigate( [i + '/details'], {relativeTo: this.route});
-  }
 }

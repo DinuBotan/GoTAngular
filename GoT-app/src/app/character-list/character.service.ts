@@ -1,9 +1,13 @@
-import {Injectable} from '@angular/core';
+import {Injectable, Pipe, PipeTransform} from '@angular/core';
 import {Character} from './character.model';
 import {Subject} from 'rxjs';
 
+@Pipe({
+  name: 'search'
+})
+
 @Injectable()
-export class CharacterService {
+export class CharacterService implements PipeTransform {
   charactersChanged = new Subject<Character[]>();
 
   private characters: Character[] = [
@@ -26,6 +30,26 @@ export class CharacterService {
 
   getCharacter(index: number) {
     return this.characters[index];
+  }
+
+  transform(characters: any[], searchInput: string, fieldName: string): any[] {
+    if (!characters){
+      return [];
+    }
+
+    if (!searchInput) {
+      return characters;
+    }
+
+    searchInput = searchInput.toLowerCase();
+    return characters.filter(
+      item => {
+        if (item && item[fieldName]) {
+          return item[fieldName].toLowerCase().includes(searchInput);
+        }
+        return false;
+      }
+    );
   }
 
 }

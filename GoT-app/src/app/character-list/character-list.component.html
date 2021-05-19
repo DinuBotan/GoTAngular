@@ -1,8 +1,16 @@
 <div class="row">
+  <section>
+    <h5> Search for a character</h5>
+    <input name="searchInput" [(ngModel)]="searchInput" type="text" placeholder="Search for characters" size="50">
+    <br>
+    <br>
+  </section>
+  <br>
   <div class="col-xs-10">
     <router-outlet *ngIf="showDetails"></router-outlet>
     <div class="row">
-      <div *ngFor="let characterEl of characters; let even = even; let i = index" >
+<!--      <div *ngFor="let characterEl of characters | search: searchInput; let even = even; let i = index" >-->
+      <div *ngFor="let characterEl of characters | search : searchInput : 'name'; let even = even; let i = index" >
         <div class="col-sm-6">
           <div class="card">
           <span *ngIf="even">
@@ -15,8 +23,6 @@
           </span>
           </div>
         </div>
-
-
 
         <div class="col-sm-6" >
           <div class="card">
