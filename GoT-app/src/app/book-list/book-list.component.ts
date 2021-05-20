@@ -13,14 +13,14 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent implements OnInit {
-  selectedBook: Book;
   books: Book[];
   subscription: Subscription;
   public searchInput: string;
 
-  // I need to inject the book service created earlier in thsi component through its constructor
+  // I need to inject the book service created earlier in this component through its constructor
   constructor(private bookService: BookService, private router: Router, private route: ActivatedRoute) { }
-
+  // Here we subscribe to the subject from bookService.
+  // As soon as it gets changed the books array gets populated here and displayed.
   ngOnInit() {
     this.subscription = this.bookService.booksChanged
       .subscribe(

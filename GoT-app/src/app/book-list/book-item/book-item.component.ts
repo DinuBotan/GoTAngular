@@ -10,6 +10,7 @@ import {Character} from '../../character-list/character.model';
   styleUrls: ['./book-item.component.css']
 })
 export class BookItemComponent implements OnInit {
+  // Input here comes from book-list.component.html
   @Input() book: Book;
   @Input() index: number;
   characters: string[];

@@ -14,7 +14,8 @@ export class HouseDetailsComponent implements OnInit {
 
   constructor(private houseService: HouseService, private route: ActivatedRoute,
               private router: Router) { }
-
+  // Here we are subscribed to the house-item.component.html routerlink which pases the id of the element that was clicked
+  // so we can get its details
   ngOnInit(): void {
     this.route.params
       .subscribe(

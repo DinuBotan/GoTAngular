@@ -9,6 +9,7 @@ import {BookService} from '../book-list/book.service';
 })
 export class HeaderComponent implements OnInit{
   constructor(private dataStorageService: DataStorageService, private bookService: BookService) {}
+  // We fetch all the data we are intersed in as soon as the app is started
   ngOnInit() {
       this.dataStorageService.fetchCharacters();
       this.dataStorageService.fetchBooks();

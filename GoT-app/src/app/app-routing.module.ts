@@ -7,6 +7,7 @@ import {BookDetailsComponent} from './book-list/book-details/book-details.compon
 import {CharacterDetailsComponent} from './character-list/character-item/character-details/character-details.component';
 import {HouseDetailsComponent} from './house-list/house-item/house-details/house-details.component';
 
+// The routes in our app. Here we specify which component should be displayed when a given route is chosen.
 const appRoutes: Routes = [
   {path: '', redirectTo: '/book-list', pathMatch: 'full'},
   { path: 'book-list', component: BookListComponent},
@@ -22,5 +23,4 @@ const appRoutes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {
-
 }

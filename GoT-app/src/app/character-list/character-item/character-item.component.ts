@@ -7,6 +7,7 @@ import {Character} from '../character.model';
   styleUrls: ['./character-item.component.css']
 })
 export class CharacterItemComponent implements OnInit {
+  // Input here comes from character-list.component.html
   @Input() character: Character;
   @Input() index: number;
 

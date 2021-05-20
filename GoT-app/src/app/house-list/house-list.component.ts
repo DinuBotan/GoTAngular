@@ -17,6 +17,7 @@ export class HouseListComponent implements OnInit {
 
   constructor(private houseService: HouseService, private router: Router, private route: ActivatedRoute) { }
 
+  // Here we subscribe to the subject from houseService. As soon as it gets changed the house array gets populated here and displayed.
   ngOnInit(): void {
     this.subscription = this.houseService.housesChanged
       .subscribe(

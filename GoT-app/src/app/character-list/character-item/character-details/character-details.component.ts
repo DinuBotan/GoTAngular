@@ -16,6 +16,8 @@ export class CharacterDetailsComponent implements OnInit {
               private route: ActivatedRoute,
               private router: Router) { }
 
+  // Here we are subscribed to the character-item.component.html routerlink which passes the id of the element that was clicked
+  // so we can get its details
   ngOnInit(): void {
     this.route.params
       .subscribe(

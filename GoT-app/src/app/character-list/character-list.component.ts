@@ -17,6 +17,8 @@ export class CharacterListComponent implements OnInit {
 
   constructor(private characterService: CharacterService, private router: Router, private route: ActivatedRoute) { }
 
+  // Here we subscribe to the subject from characterService.
+  // As soon as it gets changed the characters array gets populated here and displayed.
   ngOnInit(): void {
     this.subscription = this.characterService.charactersChanged
       .subscribe(
@@ -26,10 +28,6 @@ export class CharacterListComponent implements OnInit {
         }
       );
     this.characters = this.characterService.getCharacters();
-  }
-
-  SetShowDetails() {
-    this.showDetails = true;
   }
 
   onShowCharacterDetails(i: number){

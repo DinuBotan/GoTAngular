@@ -6,8 +6,10 @@ import {Subject} from 'rxjs';
   name: 'search'
 })
 
+// Injectable because we want to use the service later on in our character - related components.
 @Injectable()
 export class CharacterService implements PipeTransform {
+  // A multicast observable that will let us know when the characters have been fetched and set.
   charactersChanged = new Subject<Character[]>();
 
   private characters: Character[] = [
@@ -19,19 +21,24 @@ export class CharacterService implements PipeTransform {
   constructor() {
   }
 
+  // Called from the dataStorageService when the characters are fetched from the api. Will populate the characters array
+  // and send them in a message to all components subscribed to our subject, in this case to character-list.component.ts.
   setCharacters(characters: Character[]) {
     this.characters = characters;
     this.charactersChanged.next(this.characters.slice());
   }
 
+  // Returns character array
   getCharacters() {
     return this.characters.slice();
   }
 
+  //Returns specified character at given index
   getCharacter(index: number) {
     return this.characters[index];
   }
 
+  // Pipe used to filter the houses based on user input.
   transform(characters: any[], searchInput: string, fieldName: string): any[] {
     if (!characters){
       return [];

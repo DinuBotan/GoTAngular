@@ -7,6 +7,7 @@ import {House} from '../house.model';
   styleUrls: ['./house-item.component.css']
 })
 export class HouseItemComponent implements OnInit {
+  // Input here comes from house-list.component.html
   @Input() house: House;
   @Input() index: number;
 
